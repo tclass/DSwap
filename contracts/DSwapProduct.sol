@@ -9,7 +9,7 @@ contract DSwapProduct {
         uint price;
         string description;
         address seller;
-        bool payed;
+        bool paid;
         //string[15] attributes;
     }
 
@@ -44,9 +44,9 @@ contract DSwapProduct {
         if (msg.sender == product.seller) {
             return;
         } 
-        // if amount send is equal price, we set the product to payed = true
+        // if amount send is equal price, we set the product to paid = true
         if (msg.value == product.price) {
-            product.payed = true;
+            product.paid = true;
             return;
         }
     }
